@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato - Biblioteca Online</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Biblioteca Online</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="livros.html">Lista de Livros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1>Fale Conosco</h1>
+    <form id="contactForm" novalidate>
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" class="form-control" id="nome" required />
+        <div class="invalid-feedback">Por favor, insira seu nome.</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email" class="form-control" id="email" required />
+        <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+      </div>
+      <div class="mb-3">
+        <label for="motivo" class="form-label">Motivo do contato:</label>
+        <select class="form-select" id="motivo" required>
+          <option value="" selected disabled>Selecione um motivo</option>
+          <option value="elogio">Elogio</option>
+          <option value="critica">Crítica</option>
+          <option value="sugestao">Sugestão</option>
+          <option value="outro">Outro</option>
+        </select>
+        <div class="invalid-feedback">Por favor, selecione um motivo.</div>
+      </div>
+      <div class="mb-3">
+        <label for="mensagem" class="form-label">Mensagem:</label>
+        <textarea
+          class="form-control"
+          id="mensagem"
+          rows="5"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Por favor, insira sua mensagem.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      
+      const inputs = form.querySelectorAll("input, select, textarea");
+      inputs.forEach((input) => {
+        input.classList.remove("is-invalid");
+      });
+
+      let valid = true;
+
+      
+      const nome = document.getElementById("nome");
+      if (nome.value.trim() === "") {
+        nome.classList.add("is-invalid");
+        valid = false;
+      }
+
+      const email = document.getElementById("email");
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        email.classList.add("is-invalid");
+        valid = false;
+      }
+
+      
+      const motivo = document.getElementById("motivo");
+      if (!motivo.value) {
+        motivo.classList.add("is-invalid");
+        valid = false;
+      }
+
+      
+      const mensagem = document.getElementById("mensagem");
+      if (mensagem.value.trim() === "") {
+        mensagem.classList.add("is-invalid");
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Sua solicitação foi registrada com sucesso! Obrigado por entrar em contato.");
+        form.reset();
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

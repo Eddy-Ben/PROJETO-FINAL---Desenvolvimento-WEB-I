@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhes do Livro - Biblioteca Online</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .book-cover {
+      max-width: 300px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Biblioteca Online</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="livros.html">Lista de Livros</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div id="bookDetails" class="row">
+      
+    </div>
+  </main>
+
+  <script>
+    
+    const booksDetails = [
+      {
+        id: 1,
+        title: "O Pequeno Príncipe",
+        author: "Antoine de Saint-Exupéry",
+        category: "Infantil",
+        cover: "pequeno principe.jpeg",
+        edition: "1ª Edição, 1943",
+        publication: "Editora Agir",
+        synopsis:
+          "Um pequeno príncipe viaja por planetas e encontra personagens que trazem lições profundas sobre a vida e a amizade.",
+        purchaseLink: "https://www.amazon.com.br/Pequeno-Príncipe-Acompanha-marcador-páginas/dp/6584956245/ref=sr_1_1_sspa?adgrpid=126244477385&dib=eyJ2IjoiMSJ9.2oQpax4vGGILWcSsyd6tvReWmw6lXwI7k46i9ymfSxDNSOoFUSc9L6g-pZQnt2WbZ7TC3BWOrfEcuR3bqYglMnFikZBzxFPnimLGiICmCnTYFujchh-6rAo8GgVN7zfJNeQ0pXmlGbFNyWDRJz98vLAzjc62HNgcIBM7dr7H-ge03sz1PuMQlCjR5fWfmu6Bt8td2TE178ZWQIq3jQ2mc0ze2lyWVPOobsYWGiIutrRP8X70rDVLKj8GWLNaPvpSrFABRKoJViR1cEedUBh46R7BDv08pyUJbVtmq2Fkdbs.yrZ9h4RUXdokeOXIpbwwSJEMwP3WwSoYQ2fzODbajVo&dib_tag=se&hvadid=595823025318&hvdev=c&hvlocphy=9101280&hvnetw=g&hvqmt=e&hvrand=5036380390498945878&hvtargid=kwd-330102899474&hydadcr=12589_13419451&keywords=pequeno+principe&mcid=4a4f70ccccab3b10b170055f2bb50a6b&qid=1749582466&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+      },
+      {
+        id: 2,
+        title: "Dom Casmurro",
+        author: "Machado de Assis",
+        category: "Romance",
+        cover: "dom casmurro.jpeg",
+        edition: "1ª Edição, 1899",
+        publication: "Editora José Olympio",
+        synopsis:
+          "Narrado por Bentinho, o romance explora temas como ciúmes, dúvida e a fragilidade das relações humanas.",
+        purchaseLink: "https://www.amazon.com.br/Dom-Casmurro-Edição-Luxo-Almofadada/dp/6584956407/ref=sr_1_2?adgrpid=126885684215&dib=eyJ2IjoiMSJ9.KO_3Y6WY8BRirA61lvCqBHsu54WUFAcmJ1dG3lkShW0MoobUx1kWWb1LGr06aL3UzRWee5o8IQGsJLu_8Zhh-B4y3bygfP599DFgwdrRMab3EjPNYoERlOTLUkMqSEZb-M_7fQT2IBMaSXMZs2jZPD2Ga3pIs-uveJVQW76xf9-2AcfW-NUrKwfCCn2qD6a8gl7KNEadM9TTrH5cMAKNFDcoAbh5Ndz2qe3sqwt2_ECp6gDi5mCiLfIZJxAMuxnZptHGbXCjHs30dGvujd-bChwcaAW_qJx24BuEhczX_Os.gnhP_NVgC6lIhOFxM9ladFm9qykXvHoemQQrdb1_uN0&dib_tag=se&hvadid=595815709645&hvdev=c&hvlocphy=9101280&hvnetw=g&hvqmt=e&hvrand=3186496403200521372&hvtargid=kwd-299372246573&hydadcr=5764_13215255&keywords=dom+casmurro&mcid=41ce82ba9c013babaf8f8ea83004f0a8&qid=1749582484&sr=8-2&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9"
+      },
+      {
+        id: 3,
+        title: "1984",
+        author: "George Orwell",
+        category: "Ficção Científica",
+        cover: "george orwell.jpeg",
+        edition: "1ª Edição, 1949",
+        publication: "Editora Companhia das Letras",
+        synopsis:
+          "Uma distopia que mostra um mundo totalitário onde o governo controla tudo e a liberdade é uma ilusão.",
+        purchaseLink: "https://www.amazon.com.br/1984-George-Orwell/dp/8535914846/ref=sr_1_1?adgrpid=130411450681&dib=eyJ2IjoiMSJ9.YmAQI_v2aNNn_GqixoPw_dgLVVI7GNHENEy1RR8eB-xtCWjnINYrXJ8VA2aI1NwkinwNzboeyTcm9PB5jFz2kZYkcnt7FKIIMdI7MFU-rC-VdJZYzfUosVBAx_AqoCgpaY1l2HRP_MH1b6acZqOtJsOsJwpIz0UNOnvESQfQx-pK_fQKLNqLK5UXAmYeGfD5RKBrCAo7qd5eVtrn9S0i_3u91j2Wh9XG866uhHRxKm31e-nBhKJ-1jUC_kRfXpyoGbOMbVmZbAMjjSdlvqp_Lnhyss2Ved36SiAhSPmnxX8.B0-PjfvKoU7fuEnCPvTUj6t-PhY9mTCsEydhbQuclDY&dib_tag=se&hvadid=595818839446&hvdev=c&hvlocphy=9101280&hvnetw=g&hvqmt=e&hvrand=439741076224000917&hvtargid=kwd-12910866&hydadcr=26103_13514919&keywords=1984&mcid=c810efa220c639609cea9aac5c595cab&qid=1749582503&sr=8-1"
+      },
+      {
+        id: 4,
+        title: "A Revolução dos Bichos",
+        author: "George Orwell",
+        category: "Ficção",
+        cover: "revolução dos bixos.jpeg",
+        edition: "1ª Edição, 1945",
+        publication: "Editora Penguin",
+        synopsis:
+          "Uma fábula política que satiriza a corrupção e o totalitarismo usando animais de uma fazenda.",
+        purchaseLink: "https://www.amazon.com.br/revolução-dos-bichos-conto-fadas/dp/8535909559/ref=asc_df_8535909559?mcid=60fc2c70573c3a57b55caeed75b2d3db&tag=googleshopp00-20&linkCode=df0&hvadid=709856848230&hvpos=&hvnetw=g&hvrand=13215201191285721259&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9101281&hvtargid=pla-333762631610&psc=1&language=pt_BR&gad_source=1"
+      },
+      {
+        id: 5,
+        title: "O Alquimista",
+        author: "Paulo Coelho",
+        category: "Ficção",
+        cover: "alquimista.jpeg",
+        edition: "1ª Edição, 1988",
+        publication: "Editora Rocco",
+        synopsis:
+          "Uma jornada espiritual que inspira a busca pelo sonho pessoal e sentido da vida.",
+        purchaseLink: "https://www.amazon.com.br/alquimista-Paulo-Coelho/dp/8584390677"
+      }
+    ];
+
+    
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    const bookId = parseInt(getQueryParam("id"));
+    const book = booksDetails.find((b) => b.id === bookId);
+
+    const bookDetailsDiv = document.getElementById("bookDetails");
+
+    if (!book) {
+      bookDetailsDiv.innerHTML =
+        '<p class="text-center text-danger">Livro não encontrado.</p>';
+    } else {
+      bookDetailsDiv.innerHTML = `
+        <div class="col-md-4">
+          <img src="${book.cover}" alt="${book.title}" class="img-fluid book-cover" />
+        </div>
+        <div class="col-md-8">
+          <h2>${book.title}</h2>
+          <p><strong>Autor:</strong> ${book.author}</p>
+          <p><strong>Categoria:</strong> ${book.category}</p>
+          <p><strong>Edição:</strong> ${book.edition}</p>
+          <p><strong>Publicação:</strong> ${book.publication}</p>
+          <h5>Sinopse:</h5>
+          <p>${book.synopsis}</p>
+          <a href="${book.purchaseLink}" target="_blank" class="btn btn-success">Comprar este livro</a>
+        </div>
+      `;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
